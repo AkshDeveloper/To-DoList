@@ -20,6 +20,13 @@ h1 {
     color: #333;
 }
 
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 #task-input {
     width: 300px;
     padding: 10px;
@@ -49,15 +56,22 @@ h1 {
 }
 
 #task-list {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    gap: 10px;
     list-style-type: none;
     margin-top: 20px;
-    width: 300px;
+    width: 406px;
+    min-width: 300px;
 }
 
 .task-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     padding: 8px 10px;
     background: #fff;
     border-radius: 6px;
@@ -66,7 +80,7 @@ h1 {
 
 .task-text {
     word-break: break-word;
-    max-width: 200px;
+    max-width: 250px;
 }
 
 .task-text.completed {
@@ -97,3 +111,18 @@ h1 {
 .delete-button:hover {
     background: #c82333;
 }
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    #task-list {
+        width: 90%;
+    }
+
+    #task-input {
+        width: 60%;
+    }
+
+    .delete-button {
+        padding: 6px 6px;
+    }
+}       
