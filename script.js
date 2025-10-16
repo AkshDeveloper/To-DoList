@@ -74,7 +74,7 @@ function renderTask(docSnap) {
     checkbox.className = "task-checkbox";
     checkbox.addEventListener("change", async () => {
         try {
-            const taskDoc = doc(db, "tasks", id);
+            const taskDoc = doc(db, "ToDoList", id);
             await updateDoc(taskDoc, { completed: checkbox.checked });
         } catch (err) {
             console.error("Error updating task:", err);
@@ -86,7 +86,7 @@ function renderTask(docSnap) {
     deleteBtn.className = "delete-button";
     deleteBtn.addEventListener("click", async () => {
         try {
-            const taskDoc = doc(db, "tasks", id);
+            const taskDoc = doc(db, "ToDoList", id);
             await deleteDoc(taskDoc);
         } catch (err) {
             console.error("Error deleting task:", err);
